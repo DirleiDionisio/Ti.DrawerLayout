@@ -91,7 +91,6 @@ public class DrawerProxy extends TiViewProxy {
 		drawer.closeRightDrawer();
 	}
 
-
 	@Kroll.method
 	public void toggleLeftWindow(@Kroll.argument(optional = true) Object obj) {
 		if (TiApplication.isUIThread()) {
@@ -150,6 +149,16 @@ public class DrawerProxy extends TiViewProxy {
 		}
 		Message message = getMainHandler().obtainMessage(MSG_CLOSE_RIGHT_VIEW);
 		message.sendToTarget();
+	}
+
+	@Kroll.method
+	public boolean isLeftWindowOpen() {
+		return drawer.isLeftDrawerOpen();
+	}
+
+	@Kroll.method
+	public boolean isRightWindowOpen() {
+		return drawer.isRightDrawerOpen();
 	}
 
 

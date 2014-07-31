@@ -171,8 +171,14 @@ public class Drawer extends TiUIView {
 	/**
 	* Open/Close/Toggle drawers
 	*/
+	public boolean isLeftDrawerOpen() {
+		return layout.isDrawerOpen(Gravity.LEFT);
+	}
+	public boolean isRightDrawerOpen() {
+		return layout.isDrawerOpen(Gravity.RIGHT);
+	}
 	public void toggleLeftDrawer() {
-		if (layout.isDrawerOpen(Gravity.LEFT)) {
+		if (isLeftDrawerOpen()) {
 			closeLeftDrawer();
 		} else {
 			openLeftDrawer();
@@ -185,7 +191,7 @@ public class Drawer extends TiUIView {
 		layout.closeDrawer(Gravity.LEFT);
 	}
 	public void toggleRightDrawer() {
-		if (layout.isDrawerOpen(Gravity.RIGHT)) {
+		if (isRightDrawerOpen()) {
 			closeRightDrawer();
 		} else {
 			openRightDrawer();
