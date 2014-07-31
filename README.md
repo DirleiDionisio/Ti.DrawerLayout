@@ -152,6 +152,21 @@ if (OS_ANDROID) {
 	        height: Ti.UI.FILL
 	});
 
+/* Available methods:
+ *  
+ *   toggleLeftWindow()
+ *   openLeftWindow()
+ *   closeLeftWindow()
+ *   toggleRightWindow()
+ *   openRightWindow()
+ *   closeRightWindow()
+ *   isLeftWindowOpen()  -> returns boolean
+ *   isRightWindowOpen()  -> returns boolean
+ * 
+ */
+
+/* Available events */
+
 	drawer.addEventListener('draweropen', function(e) {
 	        // drawer is open
 	});
