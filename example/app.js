@@ -136,6 +136,20 @@ var drawer = TiDrawerLayout.createDrawer({
 	height: Ti.UI.FILL,
     // drawerIndicatorEnabled: false
 });
+
+/* Available methods:
+ *  
+ *   toggleLeftWindow()
+ *   openLeftWindow()
+ *   closeLeftWindow()
+ *   toggleRightWindow()
+ *   openRightWindow()
+ *   closeRightWindow()
+ *   isLeftWindowOpen()  -> returns boolean
+ *   isRightWindowOpen()  -> returns boolean
+ * 
+ */
+
 drawer.addEventListener('draweropen', function(e) {
 	win.title = "open " + e.drawer;
 });
