@@ -91,6 +91,7 @@ public class DrawerProxy extends TiViewProxy {
 		drawer.closeRightDrawer();
 	}
 
+
 	@Kroll.method
 	public void toggleLeftWindow(@Kroll.argument(optional = true) Object obj) {
 		if (TiApplication.isUIThread()) {
@@ -150,17 +151,26 @@ public class DrawerProxy extends TiViewProxy {
 		Message message = getMainHandler().obtainMessage(MSG_CLOSE_RIGHT_VIEW);
 		message.sendToTarget();
 	}
-
-	@Kroll.method
-	public boolean isLeftWindowOpen() {
+	
+	@Kroll.method @Kroll.getProperty
+	public boolean getIsLeftDrawerOpen() {
 		return drawer.isLeftDrawerOpen();
 	}
-
-	@Kroll.method
-	public boolean isRightWindowOpen() {
+	
+	@Kroll.method @Kroll.getProperty
+	public boolean getIsRightDrawerOpen() {
 		return drawer.isRightDrawerOpen();
 	}
-
+	
+	@Kroll.method @Kroll.getProperty
+	public boolean getIsLeftDrawerVisible() {
+		return drawer.isLeftDrawerVisible();
+	}
+	
+	@Kroll.method @Kroll.getProperty
+	public boolean getIsRightDrawerVisible() {
+		return drawer.isRightDrawerVisible();
+	}
 
 	@Kroll.method @Kroll.setProperty
 	public void setLeftDrawerWidth(Object arg) {
@@ -206,5 +216,10 @@ public class DrawerProxy extends TiViewProxy {
     public void setDrawerIndicatorEnabled(Object arg) {
         setPropertyAndFire(Drawer.PROPERTY_DRAWER_INDICATOR_ENABLED, arg);
     }
+    
+    @Kroll.method @Kroll.setProperty
+    public void setDrawerIndicatorImage(Object arg) {
+        setPropertyAndFire(Drawer.PROPERTY_DRAWER_INDICATOR_IMAGE, arg);
+    }    
 	
 }
