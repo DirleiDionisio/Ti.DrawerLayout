@@ -87,18 +87,19 @@ PS: Titanium SDK >= 3.3 already use the new android-support-v4.jar
 
 ##Building module on Titanium Studio
 
-- Clone repository
-- Create .project folder
-- Create .apt_generated
-- Create build/.apt_generated
+- Follow instructions on [Android Module Development Guide - Installing the Necessary Components](http://docs.appcelerator.com/titanium/latest/#!/guide/Android_Module_Development_Guide-section-29004945_AndroidModuleDevelopmentGuide-InstallingtheNecessaryComponents)
+- Clone this repository
+- Create .project file
+- Create .apt_generated folder
+- Create build/.apt_generated folder
 - Create .classpath file using .classpath.example as template and:
 	- replace {ANDROID_SDK_PATH} by your Android SDK folder
 	- replace {APPLICATION_SUPPORT_PATH_WHERE_TITANIUM_LIVES} by appropriated path (ex: /Users/dirlei/Library/Application Support)
-	- replace {TITANIUM_SDK_VERSION} by your desired Ti SDK version (ex: 3.3.0.RC)
+	- replace {TITANIUM_SDK_VERSION} by your desired Ti SDK version (ex: 3.3.0.GA)
 - Create build.properties using build.properties.example as template and:
 	- replace {ANDROID_SDK_PATH} by your Android SDK folder
 	- replace {APPLICATION_SUPPORT_PATH_WHERE_TITANIUM_LIVES} by appropriated path (ex: /Users/dirlei/Library/Application Support)
-	- replace {TITANIUM_SDK_VERSION} by your desired Ti SDK version (ex: 3.3.0.RC)
+	- replace {TITANIUM_SDK_VERSION} by your desired Ti SDK version (ex: 3.3.0.GA)
 - Import project on Titanium Studio (File/Import/Existing Projects into Workspace, select folder where you cloned repository, Finish)
 - Build module (select module project, right click, Publish/Package)
 
